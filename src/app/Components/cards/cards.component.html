@@ -1,0 +1,21 @@
+<div class="row row-cols-2 row-cols-md-3 row-cols-sm-2 row-cols-lg-4 g-4 py-5">
+  <div class="col" *ngFor="let object of pokemonListArray">
+    <a class="text-decoration-none" [routerLink]="['/pokemon-details',object.pokemonArray.name]">
+      <div class="card bg-dark shadow bg-gradient h-100">
+        <h5 class="card-header text-end" style="color: #a4a4a4;">
+          <strong>#{{object.imgId}}</strong>
+        </h5>
+        <img
+          src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/{{object.imgId}}.png"
+          class="card-img-top p-3" [alt]="object.pokemonArray.name + '.img'">
+        <div class="card-footer text-center">
+          <h4 class="card-title text-light fw-bold mb-0">
+            {{object.pokemonArray.name | uppercase}}</h4>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>
+<div class="row mt-3 mb-5">
+  <div (click)="getAllPokemons()" class="btn btn-dark py-2 w-50 mx-auto">Load More</div>
+</div>
