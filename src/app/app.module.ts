@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import {NgxPaginationModule} from 'ngx-pagination';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -14,6 +15,7 @@ import { CardsComponent } from './Components/cards/cards.component';
 import { PokeApiService } from './services/poke-api.service';
 import { Config } from './model/config';
 import { PokemonDetailsComponent } from './Components/pokemon-details/pokemon-details.component';
+import { SearchPokemonComponent } from './Components/search-pokemon/search-pokemon.component';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import { PokemonDetailsComponent } from './Components/pokemon-details/pokemon-de
     NavbarComponent,
     CarouselComponent,
     CardsComponent,
-    PokemonDetailsComponent
+    PokemonDetailsComponent,
+    SearchPokemonComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NgxPaginationModule
+    NgxPaginationModule,
+    ReactiveFormsModule
   ],
   providers: [
     PokeApiService,

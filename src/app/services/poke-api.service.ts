@@ -24,8 +24,8 @@ export class PokeApiService {
     return this.http.get(URL)
   }
 
-  getPokemonDetailByIdOrName(id): Observable<any>{
-    const URL = environment.pokeApiURL + this.CONSTANT.POKEMONAPI + "/" + id;
+  getPokemonDetailByIdOrName(value): Observable<any>{
+    const URL = environment.pokeApiURL + this.CONSTANT.POKEMONAPI + "/" + value;
     return this.http.get(URL)
   }
 }

@@ -2,19 +2,21 @@
   <div class="bg-Img">
     <img class="backgroundImage" [src]="pokemonImg3" alt="">
   </div>
-  <div class="" >
     <div class="container">
-      <div class="row py-5 align-items-center justify-content-center text-center">
-        <div class="col-12 mb-4 d-flex align-items-end justify-content-center">
-          <h1 class="pokemonName text-dark display-2 text-opacity-50 fw-bold mb-0">{{ pokemonName | uppercase}} </h1>
+      <div class="backButton" (click)="backButton()">
+        <img src="../../../assets/svg/arrow-left-svgrepo-com.svg" alt="back-button">
+      </div>
+      <div class="row pokemon-detail-row py-5 align-items-center justify-content-center text-center">
+        <div class="col-12 mb-4 d-flex align-items-end justify-content-center px-1">
+          <h1 class="pokemonName text-dark display-2 text-opacity-50 fw-bold mb-0 me-1">{{ pokemonName | uppercase}} </h1>
           <div class="pixel-img">
             <img [src]="pokemonImg2" alt="">
           </div>
         </div>
-        <div class="col-12 gx-3 row mb-4 justify-content-center">
-          <div class="col-4">
+        <div class="col-12 gx-2 gx-lg-3 row mb-4 justify-content-center">
+          <div class="col-4" *ngIf="pokemonWeight">
             <div class="row justify-content-center pokemon-stats">
-              <div class="d-flex align-items-center justify-content-center">
+              <div class="d-flex px-1 align-items-center justify-content-center">
                 <div class="me-2">
                   <img class="detail-icons" src="../../../assets/svg/weight-svgrepo-com (1).svg" alt="weight-scale">
                 </div>
@@ -22,12 +24,12 @@
                   <h5 class="mb-0 pokemon-stats-value text-dark">{{pokemonWeight}} kg</h5>
                 </div>
               </div>
-              <p class="text-dark mt-1 text-opacity-50">Weight</p>
+              <p class="text-dark mt-1 text-opacity-50 px-1">Weight</p>
             </div>
           </div>
-          <div class="col-4">
+          <div class="col-4" *ngIf="pokemonHeight">
             <div class="row justify-content-center pokemon-stats">
-              <div class="d-flex justify-content-center align-items-center">
+              <div class="d-flex px-1 justify-content-center align-items-center">
                 <div class="me-2">
                   <img class="detail-icons" src="../../../assets/svg/ruler-svgrepo-com.svg" alt="weight-scale">
                 </div>
@@ -35,12 +37,12 @@
                   <h5 class="mb-0 pokemon-stats-value text-dark">{{pokemonHeight}} m</h5>
                 </div>
               </div>
-              <p class="text-dark mt-1 text-opacity-50">Height</p>
+              <p class="text-dark mt-1 text-opacity-50 px-1">Height</p>
             </div>
           </div>
-          <div class="col-4">
+          <div class="col-4" *ngIf="pokemonSpecialMove">
             <div class="row justify-content-center pokemon-stats">
-              <div class="d-flex justify-content-center align-items-center">
+              <div class="d-flex px-1 justify-content-center align-items-center">
                 <div class="me-2">
                   <img class="detail-icons" src="../../../assets/svg/dancer-motion-svgrepo-com.svg"
                     alt="weight-scale">
@@ -49,7 +51,7 @@
                   <h5 class="mb-0 pokemon-stats-value text-dark">{{pokemonSpecialMove}}</h5>
                 </div>
               </div>
-              <p class="text-dark mt-1 text-opacity-50">Special Move</p>
+              <p class="text-dark mt-1 text-opacity-50 px-1">Special Move</p>
             </div>
           </div>
         </div>
@@ -115,5 +117,4 @@
         </div>
       </div>
     </div>
-  </div>
 </div>

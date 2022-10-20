@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { PokeApiService } from 'src/app/services/poke-api.service';
+import {Location} from '@angular/common';
+
 
 @Component({
   selector: 'app-pokemon-details',
@@ -47,7 +49,8 @@ export class PokemonDetailsComponent implements OnInit {
   constructor(
     private PokeService: PokeApiService,
     private route: Router,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private _location: Location
   ) { }
 
   ngOnInit(): void {
@@ -56,24 +59,28 @@ export class PokemonDetailsComponent implements OnInit {
     this.getPokemonDetails(value)
   }
 
-  getPokemonDetails(value){
+  async getPokemonDetails(value){
     this.PokeService.getPokemonDetailByIdOrName(value).subscribe((response) => {
       if(response){
         this.pokemonDetail = response;
         this.pokemonName = response.name;
         this.pokemonWeight = response.weight;
         this.pokemonHeight = response.height;
-        this.pokemonSpecialMove = response.moves[0].move.name;
         this.pokemonImg = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/" + response.id + ".png";
         this.pokemonImg2 = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/" + response.id + ".png";
         this.pokemonImg3 = "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/" + response.id + ".svg";
         this.pokemonTypes = response.types
         this.pokemonBaseStats = response.stats;
         this.pokeomtype = response.types[0].type.name
+        this.pokemonSpecialMove = response.moves[0].move.name;
         console.log(this.pokeomtype);
 
       }
     })
+  }
+
+  backButton(){
+    this._location.back();
   }
 
 

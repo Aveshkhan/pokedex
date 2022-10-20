@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="backButton" (click)="backButton()">
+    <img src="../../../assets/svg/arrow-left-svgrepo-com.svg" alt="back-button">
+  </div>
+
+  <div class="search-content my-5">
+    <form class="input-group mb-3" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+      <input type="text" class="form-control" formControlName="search" placeholder="Search by id or name.." aria-label="Recipient's username"
+        aria-describedby="button-addon2">
+      <button class="btn btn-dark fs-6" type="submit" id="button-addon2">Search</button>
+    </form>
+
+    <div *ngIf="searchedPokemon" class="row row-cols-2 row-cols-md-3 row-cols-sm-2 row-cols-lg-4 g-4 py-5">
+      <div class="col">
+        <a class="text-decoration-none" [routerLink]="['/pokemon-details', pokemonName]">
+          <div class="card bg-dark shadow bg-gradient h-100">
+            <h5 class="card-header text-end" style="color: #a4a4a4;">
+              <strong>#{{pokemonId}}</strong>
+            </h5>
+            <img [src]="pokemonImg" class="card-img-top p-3">
+            <div class="card-footer text-center px-1">
+              <h4 class="card-title text-light fw-bold mb-0 text-opacity-75">
+                {{ pokemonName | uppercase}}</h4>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <h4 class="text-center fw-bold text-opacity-50 text-dark my-5" *ngIf="!searchedPokemon"> {{dataNotFound}} </h4>
+
+  </div>
+</div>
