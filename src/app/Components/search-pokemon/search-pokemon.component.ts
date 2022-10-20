@@ -36,7 +36,7 @@ export class SearchPokemonComponent implements OnInit {
   onSubmit(){
     this.submitted = true;
     if(this.searchForm.valid){
-      this.searchValue = this.searchForm.value.search
+      this.searchValue = this.searchForm.value.search.toLowerCase();
       this.searchPokemon(this.searchValue)
     } else{
       return
@@ -53,8 +53,8 @@ export class SearchPokemonComponent implements OnInit {
         console.log(this.searchedPokemon)
       }
     }, (error) => {
-      if(error.status == 404){
-        this.searchedPokemon = []
+      if(error){
+        this.searchedPokemon = null
         this.dataNotFound = "Data Not Found"
         console.log(error.status)
       }

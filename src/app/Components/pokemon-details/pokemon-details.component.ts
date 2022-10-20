@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { PokeApiService } from 'src/app/services/poke-api.service';
-import {Location} from '@angular/common';
+import {Location, NumberFormatStyle} from '@angular/common';
 
 
 @Component({
@@ -13,7 +13,7 @@ import {Location} from '@angular/common';
 export class PokemonDetailsComponent implements OnInit {
 
   pokemonDetail: any;
-
+  pokemonId: any;
   pokemonName: any;
   pokemonWeight: any;
   pokemonHeight: any;
@@ -59,10 +59,11 @@ export class PokemonDetailsComponent implements OnInit {
     this.getPokemonDetails(value)
   }
 
-  async getPokemonDetails(value){
+   getPokemonDetails(value){
     this.PokeService.getPokemonDetailByIdOrName(value).subscribe((response) => {
       if(response){
         this.pokemonDetail = response;
+        this.pokemonId = response.id;
         this.pokemonName = response.name;
         this.pokemonWeight = response.weight;
         this.pokemonHeight = response.height;
@@ -79,8 +80,27 @@ export class PokemonDetailsComponent implements OnInit {
     })
   }
 
+  nextPokemon(){
+    const nextPokemonId =  this.pokemonId + 1;
+    // console.log(nextPokemonId)
+    this.route.navigate(['pokemon-details', nextPokemonId ]);
+    this.getPokemonDetails(nextPokemonId)
+  }
+
+  previousPokemon(){
+    const nextPokemonId =  this.pokemonId - 1;
+    // console.log(nextPokemonId)
+    this.route.navigate(['pokemon-details', nextPokemonId ]);
+    this.getPokemonDetails(nextPokemonId)
+  }
+
   backButton(){
-    this._location.back();
+    const value = this.activatedRoute.snapshot.paramMap.get("id")
+    if(value == this.pokemonName){
+      this._location.back();
+    } else{
+      this.route.navigate([''])
+    }
   }
 
 
