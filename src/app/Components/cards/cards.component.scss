@@ -1,4 +1,11 @@
 
+.card:hover{
+  transform: translateY(-6px);
+  transition: transform .8s cubic-bezier(.22,.68,0,1.71);
+}
+
+
+
 @media (max-width: 767.98px) {}
 
 @media (max-width: 575.98px) {

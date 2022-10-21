@@ -1,2 +1,5 @@
-<app-navbar></app-navbar>
-<router-outlet></router-outlet>
+<div [@routeAnimations]="prepareRoute(outlet)">
+  <app-navbar></app-navbar>
+  <router-outlet #outlet="outlet"></router-outlet>
+  <ng-http-loader [entryComponent]="loader" [opacity]="'.8'" [backdropBackgroundColor]="'#777777'"></ng-http-loader>
+</div>
