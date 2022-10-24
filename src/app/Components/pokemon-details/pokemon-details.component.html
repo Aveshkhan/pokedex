@@ -8,9 +8,10 @@
         <img src="../../../assets/svg/arrow-left-svgrepo-com.svg" alt="back-button">
       </div>
       <div class="next-prev d-flex align-items-center justify-content-center">
-        <div class="me-4 bg-dark rounded-circle prevBtn center bg-opacity-75 shadow" (click)="previousPokemon()">
+        <div class="bg-dark rounded-circle prevBtn center bg-opacity-75 shadow" (click)="previousPokemon()">
           <img src="../../../assets/svg/white-left-arrow-angle-svgrepo-com.svg" alt="prev">
         </div>
+        <span class="fs-6 mx-2 fw-bold text-dark text-opacity-75">#{{pokemonId}}</span>
         <div class="bg-dark rounded-circle nextBtn center bg-opacity-75 shadow" (click)="nextPokemon()">
           <img src="../../../assets/svg/white-right-arrow-angle-svgrepo-com.svg" alt="next">
         </div>

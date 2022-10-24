@@ -1,21 +1,21 @@
-
-.card:hover{
-  transform: translateY(-6px);
-  transition: transform .8s cubic-bezier(.22,.68,0,1.71);
+.card:hover {
+  transform: scale(1.015);
+  box-shadow: 0px 0px 15px 5px #27272772 !important;
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-
-
 
 @media (max-width: 767.98px) {}
 
 @media (max-width: 575.98px) {
-  .card-title{
+  .card-title {
     font-size: 0.9rem;
   }
-  .card-header{
+
+  .card-header {
     font-size: 0.9rem;
   }
-  .card-img-top{
+
+  .card-img-top {
     padding: 0.5rem !important;
   }
 
