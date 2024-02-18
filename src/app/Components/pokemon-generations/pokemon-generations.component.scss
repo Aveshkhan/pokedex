@@ -1,0 +1,51 @@
+.genTabs{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  border-bottom: 1px solid #999;
+  overflow-x: scroll;
+  padding: 0;
+}
+
+
+/* width */
+.genTabs::-webkit-scrollbar {
+  height: 5px;
+  width: 100%;
+}
+
+/* Track */
+.genTabs::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+.genTabs::-webkit-scrollbar-thumb {
+  background: #212529;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+.genTabs::-webkit-scrollbar-thumb:hover {
+  background: #0e1012;
+}
+
+.genCustomTab p{
+  width: max-content;
+  font-weight: 600;
+  margin-bottom: 0px !important;
+}
+
+.genCustomTab{
+  border-radius: 8px;
+  padding: 5px 14px;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.genCustomTab.active{
+  background-color: #212529;
+  color: #fff;
+}

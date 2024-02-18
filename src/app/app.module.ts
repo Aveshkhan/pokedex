@@ -18,6 +18,7 @@ import { PokemonDetailsComponent } from './Components/pokemon-details/pokemon-de
 import { SearchPokemonComponent } from './Components/search-pokemon/search-pokemon.component';
 import { NgHttpLoaderModule } from 'ng-http-loader';
 import { LoaderComponent } from './Components/loader/loader.component';
+import { PokemonGenerationsComponent } from './Components/pokemon-generations/pokemon-generations.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { LoaderComponent } from './Components/loader/loader.component';
     PokemonDetailsComponent,
     SearchPokemonComponent,
     LoaderComponent,
+    PokemonGenerationsComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,3 +1,4 @@
 export class Config {
-  POKEMONAPI = "/pokemon"
+  POKEMONAPI = "/pokemon";
+  GEN = "/generation"
 }

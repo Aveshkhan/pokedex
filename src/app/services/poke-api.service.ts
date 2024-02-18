@@ -28,4 +28,14 @@ export class PokeApiService {
     const URL = environment.pokeApiURL + this.CONSTANT.POKEMONAPI + "/" + value;
     return this.http.get(URL)
   }
+
+  getPokemonGen(): Observable<any>{
+    const URL = environment.pokeApiURL + this.CONSTANT.GEN
+    return this.http.get(URL)
+  }
+
+  getPokemonsByGen(genId): Observable<any>{
+    const URL = environment.pokeApiURL + this.CONSTANT.GEN + "/" + genId
+    return this.http.get(URL)
+  }
 }
